@@ -1,6 +1,7 @@
 {
     "name": "leomottarocha/correios",
     "description": "API para consumo de dados dos correios",
+    "license": "MIT",
     "autoload": {
         "psr-4": {
             "Source\\": "source/"
@@ -9,7 +10,9 @@
     "authors": [
         {
             "name": "Léo Motta Rocha",
-            "email": "leomottarocha@hotmail.com"
+            "email": "leomottarocha@hotmail.com",
+            "homepage": "https://github.com/leomottarocha",
+            "role": "Desenvolvedor Full Stack"
         }
     ],
     "minimum-stability": "stable",
