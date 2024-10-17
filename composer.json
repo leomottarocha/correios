@@ -1,0 +1,19 @@
+{
+    "name": "leomottarocha/correios",
+    "description": "API para consumo de dados dos correios",
+    "autoload": {
+        "psr-4": {
+            "Source\\": "source/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Léo Motta Rocha",
+            "email": "leomottarocha@hotmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "phpmailer/phpmailer": "^6.9"
+    }
+}
