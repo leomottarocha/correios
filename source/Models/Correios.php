@@ -65,19 +65,19 @@ class Correios
         }
     }
 
-    public function consultarCodigoPostagem(int $numero_postagem)
+    public function consultarCodigoPostagem(int $numero_postagem, $tipo_busca = "U", $tipo_solicitacao = "A")
     {
         $data_postagem_reversa = [
             "codAdministrativo" => $this->cod_administrativo,
             "numeroPedido" => $numero_postagem,
-            "tipoBusca" => "U",
-            "tipoSolicitacao" => "A"
+            "tipoBusca" => $tipo_busca,
+            "tipoSolicitacao" => $tipo_solicitacao
         ];
 
         try {
             $dados_coleta = $this->autenticarSoap()->acompanharPedido($data_postagem_reversa);
         } catch (SoapFault $e) {
-            echo "Erro: " . $e->getMessage();
+            return "Erro: " . $e->getMessage();
         }
 
         return
