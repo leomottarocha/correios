@@ -1,2 +1,5 @@
 /vendor
+/source/Support/Config.php
 *.log
+.htaccess
+index.php
