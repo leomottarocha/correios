@@ -103,6 +103,29 @@ class Correios
         return $data;
     }
 
+    public function consultarCEP(int $cep)
+    {
+        $curlHandler = curl_init();
+        curl_setopt_array($curlHandler, [
+            CURLOPT_URL => "https://api.correios.com.br/cep/v2/enderecos/{$cep}",
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_HTTPHEADER => [
+                'Accept: application/json',
+                'Expires: 0',
+                'Authorization: Bearer ' . $this->tokenConsultaRastreio()
+            ],
+        ]);
+        $response = curl_exec($curlHandler);
+        curl_close($curlHandler);
+        $data = json_decode($response);
+        if (!isset($data->logradouro)) {
+            echo "Endereço sem logradouro";
+            return false;
+        }
+
+        return $data;
+    }
+
     private function tokenConsultaRastreio()
     {
         $ch = curl_init();
