@@ -118,11 +118,6 @@ class Correios
         $response = curl_exec($curlHandler);
         curl_close($curlHandler);
         $data = json_decode($response);
-        if (!isset($data->logradouro)) {
-            echo "Endereço sem logradouro";
-            return false;
-        }
-
         return $data;
     }
 
