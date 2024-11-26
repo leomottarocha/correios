@@ -103,7 +103,7 @@ class Correios
         return $data;
     }
 
-    public function consultarCEP(int $cep)
+    public function consultarCEP(string $cep)
     {
         $curlHandler = curl_init();
         curl_setopt_array($curlHandler, [
